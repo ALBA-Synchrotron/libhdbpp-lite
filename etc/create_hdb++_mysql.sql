@@ -2,17 +2,19 @@
 -- --------------CONCRETE TABLE INHERITANCE-----------------------
 -- ---------------------------------------------------------------
 
+DROP TABLE IF EXISTS att_conf;
 CREATE TABLE IF NOT EXISTS att_conf
 (
 att_conf_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-att_name VARCHAR(255) UNIQUE NOT NULL,
 att_conf_data_type_id INT UNSIGNED NOT NULL,
+att_name VARCHAR(250) UNIQUE NOT NULL,
 att_ttl INT UNSIGNED NULL DEFAULT NULL,
-facility VARCHAR(255) NOT NULL DEFAULT '',
-domain VARCHAR(255) NOT NULL DEFAULT '',
-family VARCHAR(255) NOT NULL DEFAULT '',
-member VARCHAR(255) NOT NULL DEFAULT '',
-name VARCHAR(255) NOT NULL DEFAULT '',
+facility VARCHAR(250) NOT NULL DEFAULT '',
+domain VARCHAR(250) NOT NULL DEFAULT '',
+family VARCHAR(250) NOT NULL DEFAULT '',
+member VARCHAR(250) NOT NULL DEFAULT '',
+name VARCHAR(250) NOT NULL DEFAULT '',
+
 INDEX(att_conf_data_type_id)
 ) ENGINE=MyISAM COMMENT='Attribute Configuration Table';
 
@@ -20,7 +22,7 @@ DROP TABLE IF EXISTS att_conf_data_type;
 CREATE TABLE IF NOT EXISTS att_conf_data_type
 (
 att_conf_data_type_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-data_type VARCHAR(255) NOT NULL,
+data_type VARCHAR(250) NOT NULL,
 tango_data_type TINYINT(1) NOT NULL
 ) ENGINE=MyISAM COMMENT='Attribute types description';
 
@@ -53,7 +55,7 @@ DROP TABLE IF EXISTS att_history_event;
 CREATE TABLE IF NOT EXISTS att_history_event
 (	
 att_history_event_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-event VARCHAR(255) NOT NULL
+event VARCHAR(250) NOT NULL
 ) ENGINE=MyISAM COMMENT='Attribute history events description';
 
 INSERT INTO att_history_event (event) VALUES
@@ -64,7 +66,7 @@ CREATE TABLE IF NOT EXISTS att_parameter
 att_conf_id INT UNSIGNED NOT NULL,
 recv_time TIMESTAMP(6) DEFAULT 0,
 insert_time TIMESTAMP(6) DEFAULT 0,
-label VARCHAR(255) NOT NULL DEFAULT '',
+label VARCHAR(250) NOT NULL DEFAULT '',
 unit VARCHAR(64) NOT NULL DEFAULT '',
 standard_unit VARCHAR(64) NOT NULL DEFAULT '1',
 display_unit VARCHAR(64) NOT NULL DEFAULT '',
@@ -80,7 +82,7 @@ INDEX(att_conf_id)
 CREATE TABLE IF NOT EXISTS att_error_desc
 (
 att_error_desc_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-error_desc VARCHAR(255) UNIQUE NOT NULL
+error_desc VARCHAR(250) UNIQUE NOT NULL
 ) ENGINE=MyISAM COMMENT='Error Description Table';
 
 CREATE TABLE IF NOT EXISTS att_scalar_devboolean_ro

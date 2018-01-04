@@ -1,5 +1,7 @@
-# liphdbpp-mysql
-Library for HDB++ implementing MySQL schema
+# liphdbpp-lite
+Library for HDB++ implementing a LITE version of MySQL schema
+
+Used only at ALBA-Synchrotron
 
 ## building
 git clone --recursive http://github.com/tango-controls/libhdbpp-mysql.git  

@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS att_conf_data_type;
 CREATE TABLE IF NOT EXISTS att_conf_data_type
 (
 att_conf_data_type_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-data_type VARCHAR(255) NOT NULL,
+data_type VARCHAR(250) NOT NULL,
 tango_data_type TINYINT(1) NOT NULL
 ) ENGINE=MyISAM COMMENT='Attribute types description';
 
